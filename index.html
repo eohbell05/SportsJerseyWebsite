@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sports Jersey Store</title>
+  <link rel="stylesheet" href="Project_Home.css"/>
+</head>
+<body>
+
+  <header>
+    <h1>Sports Jersey Store</h1>
+    <nav>
+	  <a href="Project_Home.html">Home</a>
+      <a href="Project_Men.html">Men</a>
+      <a href="Project_Women.html">Women</a>
+      <a href="Project_Kids.html">Kids</a>
+      <a href="Project_County.html">County</a>
+      <a href="Project_Cart.html">Cart</a>
+	  <div></div>
+	  <div></div>
+	  <div></div>
+	  <div></div>
+	  <div></div>
+    </nav>
+	<nav>
+      <a href="Project_MyAccount.html">My Account</a>
+    </nav>
+  </header>
+  
+  <section class="products">
+    <div class="product-card">
+      <img src="KerryJersey2022.jpg" alt="Kerry 2022 Jersey">
+      <h2>Kerry 2025 Jersey</h2>
+      <p>€60.00</p>
+      <label for="size-kerry">Size:</label>
+      <select class="jerseySize" id="size-kerry">
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      </select>
+      <button onclick="addToCart(this, 'Men Kerry 2025 Jersey', 59.99, 'KerryJersey2022.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="GalwayJersey2025.jpg" alt="GalwayJersey2025.jpg">
+      <h2>Galway 2025 Jersey</h2>
+      <p>€60.00</p>
+      <label for="size-galway">Size:</label>
+      <select class="jerseySize" id="size-galway">
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      </select>
+      <button onclick="addToCart(this, 'Men Galway 2025 Jersey', 59.99, 'GalwayJersey2025.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="RoscommonJersey2025.jpg" alt="RoscommonJersey2025.jpg">
+      <h2>Roscommon 2025 Jersey</h2>
+      <p>€60.00</p>
+      <label for="size-roscommon">Size:</label>
+      <select class="jerseySize" id="size-roscommon">
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      </select>
+      <button onclick="addToCart(this, 'Men Roscommon 2025 Jersey', 59.99, 'RoscommonJersey2025.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="CorkJersey20212022.jpg" alt="CorkJersey2025.jpg">
+      <h2>Cork Jersey 2025</h2>
+      <p>€60.00</p>
+      <label for="size-cork">Size:</label>
+      <select class="jerseySize" id="size-cork">
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      </select>
+      <button onclick="addToCart(this, 'Men Cork 2025 Jersey', 59.99, 'CorkJersey20212022.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="MayoJersey2025.jpg" alt="MayoJersey2025.jpg">
+      <h2>Mayo 2025 Jersey</h2>
+      <p>€60.00</p>
+      <label for="size-mayo">Size:</label>
+      <select class="jerseySize" id="size-mayo">
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      </select>
+      <button onclick="addToCart(this, 'Men Mayo 2025 Jersey', 59.99, 'MayoJersey2025.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="DublinJersey2025.jpg" alt="DublinJersey2025.jpg">
+      <h2>Dublin 2025 Jersey</h2>
+      <p>€60.00</p>
+      <label for="size-dublin">Size:</label>
+      <select class="jerseySize" id="size-dublin">
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      </select>
+      <button onclick="addToCart(this, 'Men Dublin 2025 Jersey', 59.99, 'DublinJersey2025.jpg')">Add to Cart</button>
+    </div>
+  </section>
+
+  <script>
+    function addToCart(button, name, price, image)
+	{
+      const productCard = button.closest('.product-card');
+      const size = productCard.querySelector('.jerseySize').value;
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price, image, size });
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert(`${name} (Size: ${size}) added to cart!`);
+    }
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Sports Jersey Store</p>
+  </footer>
+
+</body>
+</html>
+
